@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <h1 class="heading">Welcome to your TODO App</h1>
+        <input type="text" class="text">
+        <button class="btn">Submit</button>
+        <div class="makeList"></div>
+    </div>
+    <script>
+        let inputText=document.querySelector('.text')
+        let clickBtn=document.querySelector('.btn')
+        let list=document.querySelector('.makeList')
+        clickBtn.addEventListener('click',()=>{
+            let inputData=inputText.value;
+            let newElem=document.createElement('p')
+            let newBtn=document.createElement('button')
+            newElem.textContent=inputData
+            newBtn.textContent="Remove"
+            list.append(newElem)
+            list.append(newBtn)
+            inputText.value=""
+            newBtn.addEventListener('click',()=>{
+                newElem.remove()
+                newBtn.remove()
+        })
+        })
+        
+    </script>
+</body>
+</html>
